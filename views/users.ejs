@@ -1,0 +1,23 @@
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="users content">
+      <h2>Personal Lista</h2>
+
+      <% if (users.length > 0) { %> 
+        <% users.forEach(user => { %>
+          <a class="details" href="/users/<%= user._id %>">
+            <h3 class="firstname">Förnamn: <%= user.firstname %></h3>
+            <h3 class="lastname">Efternamn: <%= user.lastname %></h3>
+            <h3 class="email">Email: <%= user.email %></h3>
+          </a>
+        <% }) %> 
+        <% } else { %>
+          <p>Det finns ingen data...</p>
+        <% } %>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

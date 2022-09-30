@@ -1,0 +1,18 @@
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="create-user content">
+      <form action="/users" method="POST">
+        <label for="firstname">Förnamn</label>
+        <input type="text" id="firstname" name="firstname" required />
+        <label for="lastname">Efternamn</label>
+        <input type="text" id="lastname" name="lastname" required />
+        <label for="email">email</label>
+        <input type="email" id="email" name="email" required />
+        <button>Lägg till</button>
+      </form>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
