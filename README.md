@@ -2,7 +2,7 @@
 GET, POST &amp; DELETE
 
 Go to the folder in your terminal
-Enter: npm install -g
+Enter: npm install
 
 Now run: npm start
 
