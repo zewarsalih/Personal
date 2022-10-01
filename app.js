@@ -1,15 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 const morgan = require('morgan');
 const User = require('./models/user');
+dotenv.config()
 
 
 // express app
 const app = express();
 
 // connect to mongodb
-const dbURL = 'mongodb+srv://personal:Kawasaki1234@personal.t3fpx8n.mongodb.net/personal?retryWrites=true&w=majority';
-mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
 .then((result) => app.listen(5005))
 .catch((err) => console.log(err))
 
@@ -17,7 +18,6 @@ mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
 app.set('view engine', 'ejs');
 
 // view engine in different folder
-
 //app.set('views', 'myviews');
 
 // middleware & static files 
